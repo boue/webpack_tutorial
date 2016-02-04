@@ -12,6 +12,7 @@
     "jquery": "^2.2.0"
   },
   "devDependencies": {
+    "babel-loader": "^6.2.2",
     "webpack": "^1.12.12"
   }
 }
