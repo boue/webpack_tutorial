@@ -13,6 +13,15 @@ module.exports = {
         loader: 'babel',
         //__dirname is always the directory in which the currently executing script resides
         include: __dirname + '/src',
+      },
+      {
+        test: /\.scss/,
+        //piping from right to left with !
+        loader: 'style!css!sass',
+      },
+      {
+        test: /\.html/,
+        loader: 'html',
       }
     ],
   }
