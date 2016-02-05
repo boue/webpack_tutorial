@@ -1,8 +1,11 @@
-//app entry point
-//ES5
-//var $ = require('jquery');
+// import $ from 'jquery';
+// import Button from './Components/Button';
 
-//ES6
-import $ from 'jquery';
+if (document.querySelectorAll('a').length) {
+  require.ensure([], () => {
+    const Button = require('./Components/Button');
+    const button = new Button('google.com');
 
-$('body').html('Hello');
+    button.render('a');
+  }, 'button');
+}

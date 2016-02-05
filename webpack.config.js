@@ -5,23 +5,22 @@ module.exports = {
     //compile the bundle in builds directory and call it bundle.js
     path: 'builds',
     filename: 'bundle.js',
+    publicPath: 'builds/',
   },
   module: {
     loaders: [
       {
-        test: /\.js/,
-        loader: 'babel',
-        //__dirname is always the directory in which the currently executing script resides
-        include: __dirname + '/src',
+          test:    /\.js/,
+          loader:  'babel-loader',
+          include: __dirname + '/src',
       },
       {
-        test: /\.scss/,
-        //piping from right to left with !
-        loader: 'style!css!sass',
+          test:   /\.scss/,
+          loader: 'style!css!sass',
       },
       {
-        test: /\.html/,
-        loader: 'html',
+          test:   /\.html/,
+          loader: 'html',
       }
     ],
   }
